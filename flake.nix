@@ -5,16 +5,25 @@
   };
 
   outputs = { nixpkgs, flake-utils, ... }:
-    flake-utils.lib.eachDefaultSystem (system: {
-      packages.default = nixpkgs.legacyPackages.${system}.buildDotnetModule {
+    flake-utils.lib.eachDefaultSystem (system: 
+      let pkgs = nixpkgs.legacyPackages.${system}; in {
+      packages.default = pkgs.buildDotnetModule {
         pname = "voxel-thing";
         version = "0.1.0";
         src = ./.;
 
+        meta = with pkgs.lib; {
+          description = "A work-in-progress clone of a really popular block game, now in C#!";
+          homepage = "https://github.com/BlueStaggo/VoxelThing";
+          license = licenses.mit;
+          platforms = platforms.linux;
+          mainProgram = "voxel-thing";
+        };
+
         projectFile = "VoxelThing.Client/VoxelThing.Client.csproj";
         nugetDeps = ./deps.json;
 
-        runtimeDeps = with nixpkgs.legacyPackages.${system}; [
+        runtimeDeps = with pkgs; [
           libGL
           xorg.libX11
           wayland

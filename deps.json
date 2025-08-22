@@ -20,16 +20,6 @@
     "hash": "sha256-EfYSagDue/bGYs7d5iP/jMzQCyDY0aOnCMaQbvyR/pQ="
   },
   {
-    "pname": "Microsoft.AspNetCore.App.Runtime.linux-x64",
-    "version": "8.0.18",
-    "hash": "sha256-qq1gYUk74f8+ojmS60VNL2E/qdFELCdCV96NuXWXdAI="
-  },
-  {
-    "pname": "Microsoft.NETCore.App.Runtime.linux-x64",
-    "version": "8.0.18",
-    "hash": "sha256-IIlT2ulZyamfL4P+NcAh1WBWG20Rrp40fG20+CMHGzA="
-  },
-  {
     "pname": "OpenTK",
     "version": "4.8.2",
     "hash": "sha256-PnE/hFTE90bH95jjECBjiSbHnpT/Esb6sxfXTdHom58="
